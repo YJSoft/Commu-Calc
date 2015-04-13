@@ -5,7 +5,7 @@
  *             소스코드 상의 "Made by" 문자열은 절대 삭제하실 수 없습니다.
  *             You should have received a copy of the GNU General Public License
  *             along with this program.  If not, see <http://www.gnu.org/licenses/>
- */.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
