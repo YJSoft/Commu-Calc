@@ -3,7 +3,7 @@
  * @License GPL V3
  * @Disclaimer You should not remove any "Made by" string.
  *             소스코드 상의 "Made by" 문자열은 절대 삭제하실 수 없습니다.
- *             You should have received a copy of the GNU Lesser General Public License along with this library;
+ *             You should have received a copy of the GNU General Public License along with this source code;
  *             if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 #include <stdio.h>
