@@ -1,6 +1,6 @@
 /*
  * @author YJSoft(Yumeka)
- * @License LGPL V2.1
+ * @License GPL V3
  * @Disclaimer You should not remove any "Made by" string.
  *             소스코드 상의 "Made by" 문자열은 절대 삭제하실 수 없습니다.
  *             You should have received a copy of the GNU Lesser General Public License along with this library;
