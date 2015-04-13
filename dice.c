@@ -1,13 +1,23 @@
+/*
+ * @author YJSoft(Yumeka)
+ * @License LGPL V2.1
+ * @Disclaimer You should not remove any "Made by" string.
+ *             소스코드 상의 "Made by" 문자열은 절대 삭제하실 수 없습니다.
+ *             You should have received a copy of the GNU Lesser General Public License along with this library;
+ *             if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <Windows.h>
 #include "Header.h"
 
+//debug 상수를 1로 설정후 컴파일하여 디버그 기능(배열 확인등) 을 활성화하실 수 있습니다. 
 #define __DEBUG__ 0
 #define __EXCLUSIVE__ 0
 #define __COMMUNAME__ "Still Alive Community"
 #define __RANDOM__ 1
+#define __VERSION__ "0.1"
 #define LV1 3
 #define LV2 4
 #define LV3 5
@@ -33,16 +43,18 @@ int main()
     COLORREF a;
     
     if(__EXCLUSIVE__==0){
-         system("TITLE ATK/DEF/SAN Calculator V 0.1");
+         system("TITLE ATK/DEF/SAN Calculator V %s",__VERSION__);
     }
     //if exclusive release,set special title
     else{
-         sprintf(title,"TITLE ATK/DEF/SAN Calculator V 0.1 for %s",__COMMUNAME__);
+         sprintf(title,"TITLE ATK/DEF/SAN Calculator V %s for %s",__VERSION__,__COMMUNAME__);
          system(title);
     }
     while(continue_val==1){
+        //아래 두줄은 삭제되어서는 안됩니다. 
         SetConsoleTextAttribute(hC,12+160);
         printf("Program by 유메카(@commu_yumeka or @sanekata_)\n");
+        
         SetConsoleTextAttribute(hC,12);
         printf("ATK");
         SetConsoleTextAttribute(hC,15);
@@ -54,7 +66,7 @@ int main()
         SetConsoleTextAttribute(hC,14);
         printf("SAN");
         SetConsoleTextAttribute(hC,15);
-        printf(" Calculator V 0.1\n");
+        printf(" Calculator V %s\n",__VERSION__);
         
         //if exclusive release,show for ~~
         if(__EXCLUSIVE__==1){
@@ -123,6 +135,7 @@ int main()
             scanf("%d",&temp);
             
             switch(temp){
+            //컴퓨터의 공격/방어/정신력 또한 계산하고 있으나 사용하지 않고 있습니다. 
             case 1:
                  computer.atk = random_val(1,LV1);
                  computer.def = random_val(1,LV1);
@@ -146,11 +159,13 @@ int main()
             else temp=2;
         }
         
+        //공격 
         if(temp==1)
         {
              compare_val = player.atk;
              type=1;
         }
+        //방어 
         else
         {
              compare_val = player.def;
