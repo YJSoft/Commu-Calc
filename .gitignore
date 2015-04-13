@@ -28,6 +28,10 @@
 *.x86_64
 *.hex
 
+# zip files
+*.zip
+*.zipx
+
 # =========================
 # Operating System Files
 # =========================
