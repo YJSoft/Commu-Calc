@@ -33,11 +33,11 @@ int main()
     COLORREF a;
     
     if(__EXCLUSIVE__==0){
-         system("TITLE ATK/DEF/SAN Calculator");
+         system("TITLE ATK/DEF/SAN Calculator V 0.1");
     }
     //if exclusive release,set special title
     else{
-         sprintf(title,"TITLE ATK/DEF/SAN Calculator for %s",__COMMUNAME__);
+         sprintf(title,"TITLE ATK/DEF/SAN Calculator V 0.1 for %s",__COMMUNAME__);
          system(title);
     }
     while(continue_val==1){
@@ -54,7 +54,7 @@ int main()
         SetConsoleTextAttribute(hC,14);
         printf("SAN");
         SetConsoleTextAttribute(hC,15);
-        printf(" Calculator\n");
+        printf(" Calculator V 0.1\n");
         
         //if exclusive release,show for ~~
         if(__EXCLUSIVE__==1){
