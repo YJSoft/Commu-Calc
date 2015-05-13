@@ -16,7 +16,7 @@
 
 #define __EXCLUSIVE__ 0
 #define __COMMUNAME__ "(Community Name Here)"
-#define __PROGRAM_VERSION__ "0.2"
+#define __PROGRAM_VERSION__ "0.2.1"
 #define LV1 3
 #define LV2 4
 #define LV3 5
