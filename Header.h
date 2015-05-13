@@ -4,6 +4,7 @@ int random_val(int min,int max);
 int X_prob(double x);
 int init_prob(double x);
 void printHelp();
+void clean(char *var);
 
 typedef struct stat_struct{
         int atk;
@@ -11,3 +12,4 @@ typedef struct stat_struct{
         int san;
         int dice;
 } stat;
+
