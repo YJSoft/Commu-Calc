@@ -16,7 +16,7 @@
 
 #define __EXCLUSIVE__ 0
 #define __COMMUNAME__ "(Community Name Here)"
-#define __PROGRAM_VERSION__ "0.2.1"
+#define __PROGRAM_VERSION__ "0.2.2"
 #define LV1 3
 #define LV2 4
 #define LV3 5
@@ -144,7 +144,7 @@ int main(int argc, char* argv[])
         compare_val=0; 
         if(isRandom==2){
             do{
-            printf("랜덤 공격/방어 모드는 0,\n공격/방어 선택 모드는 1을 입력해주세요.\n>");
+            printf("랜덤 공격/방어 모드는 1,\n공격/방어 선택 모드는 0을 입력해주세요.\n>");
             fgets(stat_tmp1, 2, stdin);
             sscanf(stat_tmp1, "%d",&temp);
             getchar();
