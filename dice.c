@@ -16,7 +16,7 @@
 
 #define __EXCLUSIVE__ 0
 #define __COMMUNAME__ "Still Alive Community"
-#define __PROGRAM_VERSION__ "0.2.3"
+#define __PROGRAM_VERSION__ "0.2.4"
 #define LV1 3
 #define LV2 4
 #define LV3 5
@@ -27,10 +27,7 @@ int main(int argc, char* argv[])
     stat player={0,0,0,0};
     stat computer={0,0,0,0};
     char title[100];
-    char stat_tmp1[10];
-    char stat_tmp2[10];
-    char stat_tmp3[10];
-    char stat_tmp4[10];
+    char stat_tmp[10];
     int temp,success,compare_val,type; //1-선공 2-방어 3-정신력 
     int continue_val=1,i=0;
     FILE *f;
@@ -145,9 +142,9 @@ int main(int argc, char* argv[])
         if(isRandom==2){
             do{
             printf("랜덤 공격/방어 모드는 1,\n공격/방어 선택 모드는 0을 입력해주세요.\n>");
-            fgets(stat_tmp1, 2, stdin);
-            sscanf(stat_tmp1, "%d",&temp);
-            getchar();
+            gets(stat_tmp);
+            sscanf(stat_tmp, "%d",&temp);
+            clean(stat_tmp);
             }while(temp<0||temp>1);
             isRandom=temp;
             temp=0;
@@ -158,10 +155,10 @@ int main(int argc, char* argv[])
         printf("공격력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp1, 3, stdin);
-        sscanf(stat_tmp1, "%d",&temp);
-        getchar();
-        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp1);
+        gets(stat_tmp);
+        sscanf(stat_tmp, "%d",&temp);
+        clean(stat_tmp);
+        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp);
         }while(temp<1||temp>11);
         player.atk=temp;
         temp=0;
@@ -171,10 +168,10 @@ int main(int argc, char* argv[])
         printf("방어력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp2, 3, stdin);
-        sscanf(stat_tmp2, "%d",&temp);
-        getchar();
-        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp2);
+        gets(stat_tmp);
+        sscanf(stat_tmp, "%d",&temp);
+        clean(stat_tmp);
+        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp);
         }while(temp<1||temp>11);
         player.def=temp;
         temp=0;
@@ -184,10 +181,10 @@ int main(int argc, char* argv[])
         printf("정신력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp3, 3, stdin);
-        sscanf(stat_tmp3, "%d",&temp);
-        getchar();
-        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp3);
+        gets(stat_tmp);
+        sscanf(stat_tmp, "%d",&temp);
+        clean(stat_tmp);
+        if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp);
         }while(temp<1||temp>11);
         player.san=temp;
         temp=0;
@@ -195,18 +192,18 @@ int main(int argc, char* argv[])
         if(isRandom==0){
             do{
             printf("공격/방어 선택(1-공격,2-방어)>");
-            fgets(stat_tmp4, 2, stdin);
-            sscanf(stat_tmp4, "%d",&temp);
-            getchar();
+            gets(stat_tmp);
+            sscanf(stat_tmp, "%d",&temp);
+            clean(stat_tmp);
             }while(temp<1||temp>3);
         }
         if(isRandom==1){
             player.dice=random_val(1,6);
             do{
             printf("컴퓨터 레벨 입력(1,2,3)\n레벨 1-최대값 3\n레벨 2-최대값 4\n레벨 3-최대값 5\n>");
-            fgets(stat_tmp4, 2, stdin);
-            sscanf(stat_tmp4, "%d",&temp);
-            getchar();
+            gets(stat_tmp);
+            sscanf(stat_tmp, "%d",&temp);
+            clean(stat_tmp);
             }while(temp<1||temp>3);
             
             switch(temp){
@@ -408,4 +405,12 @@ void printHelp()
     printf("/n - 공격/방어 선택 모드를 활성화합니다.(/r과 동시 사용할 수 없음)\n");
     printf("/d - 디버그 모드를 활성화합니다.\n\n");
     system("PAUSE");
+}
+
+void clean(char *var) {
+    int i = 0;
+    while(var[i] != '\0') {
+        var[i] = '\0';
+        i++;
+    }
 }
