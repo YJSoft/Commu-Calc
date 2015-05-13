@@ -15,8 +15,8 @@
 #include "language.h"
 
 #define __EXCLUSIVE__ 0
-#define __COMMUNAME__ "(Community Name Here)"
-#define __PROGRAM_VERSION__ "0.2.2"
+#define __COMMUNAME__ "Still Alive Community"
+#define __PROGRAM_VERSION__ "0.2.3"
 #define LV1 3
 #define LV2 4
 #define LV3 5
@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
         printf("공격력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp1, 2, stdin);
+        fgets(stat_tmp1, 3, stdin);
         sscanf(stat_tmp1, "%d",&temp);
         getchar();
         if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp1);
@@ -171,7 +171,7 @@ int main(int argc, char* argv[])
         printf("방어력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp2, 2, stdin);
+        fgets(stat_tmp2, 3, stdin);
         sscanf(stat_tmp2, "%d",&temp);
         getchar();
         if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp2);
@@ -184,7 +184,7 @@ int main(int argc, char* argv[])
         printf("정신력");
         SetConsoleTextAttribute(hC,15);
         printf(" 입력>");
-        fgets(stat_tmp3, 2, stdin);
+        fgets(stat_tmp3, 3, stdin);
         sscanf(stat_tmp3, "%d",&temp);
         getchar();
         if(isDebug==1) printf("stat : %d ( %s )\n",temp,stat_tmp3);
