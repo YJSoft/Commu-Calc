@@ -144,11 +144,11 @@ int main(int argc, char* argv[])
         compare_val=0; 
         if(isRandom==2){
             do{
-            printf("랜덤 공격/방어 모드는 1,\n공격/방어 선택 모드는 2를 입력해주세요.\n>");
+            printf("랜덤 공격/방어 모드는 0,\n공격/방어 선택 모드는 1을 입력해주세요.\n>");
             fgets(stat_tmp1, 2, stdin);
             sscanf(stat_tmp1, "%d",&temp);
             getchar();
-            }while(temp<1||temp>2);
+            }while(temp<0||temp>1);
             isRandom=temp;
             temp=0;
         }
