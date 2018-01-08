@@ -78,3 +78,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# TFS Files
+list.txt
+san.txt
+stat.txt

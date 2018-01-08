@@ -1,0 +1,36 @@
+# Project: TextFightSimulator
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = TextFightSimulator_private.res
+OBJ      = list.o simulator.o $(RES)
+LINKOBJ  = list.o simulator.o $(RES)
+LIBS     = -L"C:/TDM-GCC-w64/lib" -L"C:/TDM-GCC-w64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/TDM-GCC-w64/include" -I"C:/TDM-GCC-w64/x86_64-w64-mingw32/include" -I"C:/TDM-GCC-w64/lib/gcc/x86_64-w64-mingw32/5.1.0/include"
+CXXINCS  = -I"C:/TDM-GCC-w64/include" -I"C:/TDM-GCC-w64/x86_64-w64-mingw32/include" -I"C:/TDM-GCC-w64/lib/gcc/x86_64-w64-mingw32/5.1.0/include" -I"C:/TDM-GCC-w64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++"
+BIN      = TextFightSimulator.exe
+CXXFLAGS = $(CXXINCS) -Os
+CFLAGS   = $(INCS) -Os
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+list.o: list.c
+	$(CC) -c list.c -o list.o $(CFLAGS)
+
+simulator.o: simulator.c
+	$(CC) -c simulator.c -o simulator.o $(CFLAGS)
+
+TextFightSimulator_private.res: TextFightSimulator_private.rc 
+	$(WINDRES) -i TextFightSimulator_private.rc --input-format=rc -o TextFightSimulator_private.res -O coff 
+
