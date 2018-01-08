@@ -34,19 +34,19 @@ UnitCount=4
 [VersionInfo]
 Major=0
 Minor=5
-Release=1
-Build=170
+Release=2
+Build=172
 LanguageID=1042
 CharsetID=1252
 CompanyName=YJSoft
-FileVersion=0.5.1.170
+FileVersion=0.5.2.172
 FileDescription=Text Fight Simulator for Own Charactor Community
 InternalName=TextFightSimulator_Free
 LegalCopyright=Copyright 2018 YJSoft
 LegalTrademarks=
 OriginalFilename=TextFightSimulator.exe
 ProductName=Text Fight Simulator
-ProductVersion=0.5.1.170
+ProductVersion=0.5.2.172
 AutoIncBuildNr=1
 SyncProduct=1
 

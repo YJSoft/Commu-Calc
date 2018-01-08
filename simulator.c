@@ -347,7 +347,7 @@ void fight(Charactor *first, Charactor *second) {
 		// 선공 공격 성공
 		if(X_prob(stat[second->def])) {
 			// 선공 공격 성공이지만 방어 방어 성공
-			damage = first->atk - second->def + first->power;
+			damage = first->atk - (second->def / 2) + first->power;
 			if(first->confused) damage /= 2;
 			if(damage > 0) printf("%s의 공격! 막혔지만 %s에게 %d의 데미지를 입혔다!\n", first->name, second->name, damage);
 			else printf("%s의 공격! 하지만 %s에겐 효과가 없었다!\n", first->name, second->name);
